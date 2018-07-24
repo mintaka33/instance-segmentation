@@ -24,3 +24,17 @@ virtualenv --no-site-packages envmask
 source envmask/bin/activate
 
 ```
+
+## install python packages
+```bash
+sudo apt install python3-tk
+
+pip3 install Cython
+pip3 install numpy scipy matplotlib
+pip3 install pycocotools
+pip3 install tensorflow
+pip3 install scikit-image
+pip3 install keras
+pip3 install IPython
+pip3 install opencv-python
+```
