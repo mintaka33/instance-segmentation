@@ -38,3 +38,23 @@ pip3 install keras
 pip3 install IPython
 pip3 install opencv-python
 ```
+
+## notes
+
+### set python virtual env config in VSCode for debug
+
+1. open vscode "Settings", set below virtual env config
+```
+"python.venvPath": "~/.virtualenvs",
+    "python.venvFolders": [
+        "envseg"
+    ],
+"python.pythonPath": "~/.virtualenvs/envseg/bin/python"
+}
+```
+2. reopen vscode, press "F1" or "Ctrl+Shift+P", find "Python: Select Interpreter" and select a python environment
+
+3. in "launch.json", config python path in below
+```
+"pythonPath": "${config:python.pythonPath}"
+```
