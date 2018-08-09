@@ -98,7 +98,6 @@ for img_file in file_names:
             # Skip this instance. Has no bbox. Likely lost in image cropping.
             continue
         y1, x1, y2, x2 = boxes[i]
-        cv2.imwrite('mask.jpg',masked_image)
         cv2.rectangle(masked_image, (x1,y1),(x2,y2), (0,255,0),2)
         # Label
         class_id = class_ids[i]
@@ -111,5 +110,7 @@ for img_file in file_names:
         masked_image = vc.apply_mask(masked_image, mask, color)
 
         cv2.putText(masked_image, caption, (int(x1),int(y1)),cv2.FONT_HERSHEY_SIMPLEX,1, (255,0,255),2)
+
+        cv2.imwrite('mask.jpg',masked_image)
 
 print("process done...")
