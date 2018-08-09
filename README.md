@@ -40,7 +40,7 @@ pip3 install -r requirements.txt
 1. open vscode "Settings", set below virtual env config
 ```
 "python.venvPath": "~/.virtualenvs",
-    "python.venvFolders": [
+"python.venvFolders": [
         "envseg"
     ],
 "python.pythonPath": "~/.virtualenvs/envseg/bin/python"
