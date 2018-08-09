@@ -63,17 +63,12 @@ class_names = ['BG', 'person', 'bicycle', 'car', 'motorcycle', 'airplane',
                'teddy bear', 'hair drier', 'toothbrush']
 
 # Load a random image from the images folder
-# Load a random image from the images folder
 import cv2
 file_names = next(os.walk(IMAGE_DIR))[2]
-image = scipy.misc.imread(os.path.join(IMAGE_DIR, random.choice(file_names)))
-#cap = cv2.VideoCapture(0)
-imgindex = 0
-#plt.ion()
 
-while(True):
+for img_file in file_names:
     #ret, image = cap.read()
-    image = cv2.imread(os.path.join(IMAGE_DIR, random.choice(file_names)))
+    image = cv2.imread(os.path.join(IMAGE_DIR, img_file))
     # Run detection
     results = model.detect([image], verbose=1)
     print (image.shape)
@@ -103,7 +98,7 @@ while(True):
             # Skip this instance. Has no bbox. Likely lost in image cropping.
             continue
         y1, x1, y2, x2 = boxes[i]
-        cv2.imwrite('Mask-Rcnn.jpg',masked_image)
+        cv2.imwrite('mask.jpg',masked_image)
         cv2.rectangle(masked_image, (x1,y1),(x2,y2), (0,255,0),2)
         # Label
         class_id = class_ids[i]
@@ -117,13 +112,4 @@ while(True):
 
         cv2.putText(masked_image, caption, (int(x1),int(y1)),cv2.FONT_HERSHEY_SIMPLEX,1, (255,0,255),2)
 
-    cv2.imshow('Mask-Rcnn',masked_image)
-    key = cv2.waitKey(1) & 0xFF
-    if key == 27 or key == ord('q'):
-        break
-    elif key == ord('s'):
-        imgindex += 1
-        cv2.imwrite('./{0}.jpg'.format(imgindex),masked_image)
-cap.release()
-cv2.destroyAllWindows()
-
+print("process done...")
