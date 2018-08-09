@@ -111,6 +111,10 @@ for img_file in file_names:
 
         cv2.putText(masked_image, caption, (int(x1),int(y1)),cv2.FONT_HERSHEY_SIMPLEX,1, (255,0,255),2)
 
+        # Save masked image
         cv2.imwrite('mask.jpg',masked_image)
+        
+        # Save mask data to file
+        np.savetxt("mask_"+label+"_"+str(i)+".txt", mask, fmt="%d")
 
 print("process done...")
