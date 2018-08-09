@@ -1,0 +1,10 @@
+Cython
+IPython
+numpy 
+scipy 
+matplotlib
+pycocotools
+tensorflow
+keras
+scikit-image
+opencv-python
