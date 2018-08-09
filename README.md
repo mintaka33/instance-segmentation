@@ -52,3 +52,6 @@ pip3 install -r requirements.txt
 ```
 "pythonPath": "${config:python.pythonPath}"
 ```
+
+## result
+![image](https://github.com/mintaka33/instance-segmentation/blob/master/mask_rcnn_sample/result/mask.jpg)
