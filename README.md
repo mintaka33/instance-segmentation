@@ -19,8 +19,8 @@ sudo apt install python3-pip
 
 sudo pip3 install virtualenv
 
-mkdir ~/.virtualenv
-cd ~/.virtualenv
+mkdir ~/.virtualenvs
+cd ~/.virtualenvs
 
 virtualenv --no-site-packages envseg
 source envseg/bin/activate
@@ -31,6 +31,13 @@ source envseg/bin/activate
 ```bash
 cd mask_rcnn_sample
 pip3 install -r requirements.txt
+```
+
+## how to run
+```bash
+cd mask_rcnn_sample
+source ~/.virtualenvs/envseg/bin/activate
+python demo.py
 ```
 
 ## notes
